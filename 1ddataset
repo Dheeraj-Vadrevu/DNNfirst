@@ -1,0 +1,37 @@
+import numpy as np
+from matplotlib import pyplot as plt
+samp=[]
+y=[]
+samp1=[]
+samp=np.linspace(-1,1,100)
+print(samp)
+y=0.1*np.power(samp,1)+np.power(samp,2)+np.power(samp,3)
+print(y)
+fig = plt.figure()
+ax = fig.add_subplot(111)
+ax.plot(samp, y, color='lightblue', linewidth=5)
+ax.set_xlim(-1,1,5)
+plt.savefig('foo.png')
+plt.show()
+
+
+def create_dataset(n_samples):
+  samp1=np.linspace(-1,1,n_samples)
+  return(samp1)
+  print(samp1)
+  
+
+
+class Dataset:
+  def __init__(self,n1):
+    self.n1=n1
+  def load_data(self):
+    print(np.linspace(-1,1,self.n1))
+
+
+d=Dataset(12)
+d.load_data()
+n_samples=int(input("Enter the number of samples"))
+create_dataset(n_samples)
+  
+
